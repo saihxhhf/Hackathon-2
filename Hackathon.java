@@ -7,7 +7,6 @@ class Student {
     String courseName;
     int courseCredits;
 
-    // Parameterized Constructor
     Student(String studentName, int rollNumber, double marks,
             String courseName, int courseCredits) {
         this.studentName = studentName;
@@ -17,17 +16,15 @@ class Student {
         this.courseCredits = courseCredits;
     }
 
-    // Calculate course fee
     double calculateFee() {
         return courseCredits * 1500;
     }
 
-    // Check eligibility
+  
     boolean checkEligibility() {
         return marks >= 50;
     }
 
-    // Calculate scholarship percentage
     double calculateScholarship() {
         double fee = calculateFee();
 
@@ -40,12 +37,11 @@ class Student {
         }
     }
 
-    // Calculate final fee
     double calculateFinalFee() {
         return calculateFee() - calculateScholarship();
     }
 
-    // Display all details
+    
     void displayDetails() {
         System.out.println("\n----- Student Course Registration Details -----");
         System.out.println("Student Name   : " + studentName);
@@ -66,7 +62,7 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
-        // Read student details
+     
         System.out.print("Enter student name: ");
         String studentName = sc.nextLine();
 
@@ -76,16 +72,15 @@ public class Main {
         System.out.print("Enter marks: ");
         double marks = sc.nextDouble();
 
-        sc.nextLine(); // Consume newline
+        sc.nextLine(); 
 
-        // Read course details
         System.out.print("Enter course name: ");
         String courseName = sc.nextLine();
 
         System.out.print("Enter course credits: ");
         int courseCredits = sc.nextInt();
 
-        // Create object using parameterized constructor
+       
         Student student = new Student(
             studentName,
             rollNumber,
@@ -94,7 +89,7 @@ public class Main {
             courseCredits
         );
 
-        // Check eligibility first
+    
         if (student.checkEligibility()) {
             student.displayDetails();
         } else {
